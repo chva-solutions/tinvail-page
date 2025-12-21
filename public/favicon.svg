@@ -1,0 +1,12 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="tinvailGradient" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F2B7C8" />
+      <stop offset="0.5" stop-color="#B7A6E7" />
+      <stop offset="1" stop-color="#93D3F0" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="18" fill="#FAF6F4" />
+  <path d="M12 38C20 24 40 16 52 26" stroke="url(#tinvailGradient)" stroke-width="6" stroke-linecap="round" />
+  <circle cx="45" cy="40" r="4" fill="#F2D7A6" />
+</svg>

@@ -1,0 +1,359 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const collection = [
+  {
+    title: 'Azure Veranda',
+    location: 'Coastal villa with palms and sea light',
+    mood: 'Sunlit, elegant, breezy',
+    image: '/images/azure-veranda.png',
+    alt: 'Watercolor scene of a woman in a white dress walking along a villa veranda by the sea with palm trees.',
+  },
+  {
+    title: 'Sunbreak Shore',
+    location: 'Radiant coastline with towering clouds',
+    mood: 'Hopeful, airy, expansive',
+    image: '/images/sunbreak-shore.png',
+    alt: 'Watercolor scene of a woman on a beach beneath dramatic clouds and sun rays over the ocean.',
+  },
+  {
+    title: 'Crimson Cabin',
+    location: 'Forest path toward a red cottage',
+    mood: 'Grounded, fresh, nostalgic',
+    image: '/images/crimson-cabin.png',
+    alt: 'Watercolor scene of a woman walking toward a red cabin in a lush forest clearing.',
+  },
+  {
+    title: 'Longtail Morning',
+    location: 'Quiet beach with a wooden boat',
+    mood: 'Salt air, calm tides, wanderlust',
+    image: '/images/longtail-morning.png',
+    alt: 'Watercolor scene of a woman on a beach beside a wooden longtail boat and turquoise water.',
+  },
+  {
+    title: 'Evening Tide',
+    location: 'Dusk reflections on a tranquil shore',
+    mood: 'Dreamy, reflective, poetic',
+    image: '/images/evening-tide.png',
+    alt: 'Watercolor scene of a silhouetted woman at sunset on a beach with colorful sky reflections.',
+  },
+  {
+    title: 'Emerald Falls',
+    location: 'Hidden waterfall in the jungle',
+    mood: 'Lush, serene, rejuvenating',
+    image: '/images/emerald-falls.png',
+    alt: 'Watercolor scene of a woman in a white dress looking at a jungle waterfall surrounded by greenery.',
+  },
+];
+
+const highlights = [
+  {
+    title: 'Story-first compositions',
+    description: 'Every scene centers a quiet heroine, inviting you into the moment and out of the noise.',
+  },
+  {
+    title: 'Watercolor softness',
+    description: 'Layered washes, airy light, and fluid movement create a calm, dreamlike palette.',
+  },
+  {
+    title: 'Gallery-ready prints',
+    description: 'Premium paper, rich pigment, and a matte finish give the art a timeless feel.',
+  },
+];
+
+const steps = [
+  {
+    title: 'Choose your scene',
+    description: 'Pick the place that mirrors your mood, from sea breeze to forest stillness.',
+  },
+  {
+    title: 'Select a size',
+    description: 'Multiple sizes let you build a quiet corner or a statement wall.',
+  },
+  {
+    title: 'Unwrap the calm',
+    description: 'Each poster arrives carefully packaged and ready to frame.',
+  },
+];
+
+const notes = [
+  {
+    title: 'Soft palettes for slow spaces',
+    description: 'Designed to live well with warm neutrals, linen textures, and natural wood tones.',
+  },
+  {
+    title: 'Curated, not crowded',
+    description: 'A tight collection of six signature places keeps the story cohesive.',
+  },
+  {
+    title: 'Made for modern rituals',
+    description: 'A daily reminder to breathe, pause, and stay present.',
+  },
+];
+---
+
+<Layout title="Tinvail | dreaming starts with open eyes">
+  <div class="relative overflow-hidden gradient-veil grain">
+    <div class="watercolor-orb blush" style="width: 360px; height: 360px; top: -120px; left: -120px;"></div>
+    <div class="watercolor-orb sky" style="width: 260px; height: 260px; top: 40px; right: -80px;"></div>
+    <div class="watercolor-orb lilac" style="width: 320px; height: 320px; bottom: -160px; right: 12%;"></div>
+
+    <header class="container-custom relative z-10 flex items-center justify-between py-6">
+      <div class="logo-badge">
+        <img src="/logo-transparent-2.png" alt="Tinvail logo" class="h-9 w-auto" />
+      </div>
+      <nav class="hidden items-center gap-8 text-sm font-semibold text-ink-soft lg:flex">
+        <a class="hover:text-ink transition" href="#collection">Collection</a>
+        <a class="hover:text-ink transition" href="#craft">Craft</a>
+        <a class="hover:text-ink transition" href="#story">Story</a>
+        <a class="hover:text-ink transition" href="#faq">FAQ</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <a class="btn-outline hidden sm:inline-flex" href="#collection">View gallery</a>
+        <a class="btn-primary" href="#collection">Shop the collection</a>
+      </div>
+    </header>
+
+    <section class="container-custom relative z-10 grid items-center gap-10 pb-20 pt-6 lg:grid-cols-[1.05fr_0.95fr]">
+      <div class="space-y-6">
+        <p class="section-label animate-rise">Tinvail watercolor posters</p>
+        <h1 class="font-display text-4xl leading-tight text-ink sm:text-5xl lg:text-6xl">
+          dreaming starts with open eyes
+        </h1>
+        <p class="text-lg text-ink-soft animate-rise delay-1">
+          Tinvail captures women in sunlit places, painted in soft watercolor tones. Each poster invites a quiet pause and turns your walls into a daily escape.
+        </p>
+        <div class="flex flex-wrap gap-4 animate-rise delay-2">
+          <a class="btn-primary" href="#collection">Shop posters</a>
+          <a class="btn-outline" href="#story">Read the story</a>
+        </div>
+        <div class="flex flex-wrap gap-6 text-sm text-ink-soft animate-rise delay-3">
+          <div class="flex items-center gap-2">
+            <span class="h-2 w-2 rounded-full bg-rose"></span>
+            <span>6 signature scenes</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="h-2 w-2 rounded-full bg-sky"></span>
+            <span>Premium matte finish</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="h-2 w-2 rounded-full bg-lilac"></span>
+            <span>Frame-ready sizes</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative grid gap-4 sm:grid-cols-2">
+        <div class="card-collection animate-rise delay-1">
+          <img src="/images/azure-veranda.png" alt="Azure Veranda poster" class="h-full w-full object-cover" loading="lazy" />
+        </div>
+        <div class="grid gap-4">
+          <div class="card-collection animate-rise delay-2">
+            <img src="/images/evening-tide.png" alt="Evening Tide poster" class="h-full w-full object-cover" loading="lazy" />
+          </div>
+          <div class="card-collection animate-rise delay-3">
+            <img src="/images/crimson-cabin.png" alt="Crimson Cabin poster" class="h-full w-full object-cover" loading="lazy" />
+          </div>
+        </div>
+        <div class="absolute -bottom-8 -left-6 hidden rounded-full bg-white px-5 py-3 text-sm font-semibold text-ink shadow-xl lg:flex">
+          Curated for calm interiors
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section class="container-custom py-16">
+    <div class="grid gap-6 md:grid-cols-3">
+      {highlights.map((item) => (
+        <div class="card-soft reveal">
+          <h3 class="font-display text-2xl text-ink">{item.title}</h3>
+          <p class="mt-3 text-sm text-ink-soft">{item.description}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section id="collection" class="container-custom py-20">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <div>
+        <p class="section-label">Signature collection</p>
+        <h2 class="font-display text-4xl text-ink">Six places. Six ways to exhale.</h2>
+        <p class="mt-3 max-w-xl text-ink-soft">
+          Each watercolor scene pairs a thoughtful heroine with a destination that feels both cinematic and personal. Choose one or curate a full story across your wall.
+        </p>
+      </div>
+      <a class="btn-primary" href="#craft">Explore the craft</a>
+    </div>
+
+    <div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {collection.map((poster) => (
+        <article class="card-collection reveal">
+          <img src={poster.image} alt={poster.alt} class="h-64 w-full object-cover" loading="lazy" />
+          <div class="p-6">
+            <h3 class="font-display text-2xl text-ink">{poster.title}</h3>
+            <p class="mt-2 text-sm text-ink-soft">{poster.location}</p>
+            <p class="mt-3 text-sm text-ink">{poster.mood}</p>
+            <div class="mt-5 flex items-center justify-between text-xs font-semibold uppercase tracking-wider text-ink-soft">
+              <span>Multiple sizes</span>
+              <span>Fine art paper</span>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section id="craft" class="relative overflow-hidden py-20">
+    <div class="absolute inset-0 bg-gradient-to-br from-cloud via-pearl to-mist"></div>
+    <div class="container-custom relative z-10 grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+      <div class="space-y-6">
+        <p class="section-label">The craft</p>
+        <h2 class="font-display text-4xl text-ink">Art prints that feel like a breath of air.</h2>
+        <p class="text-ink-soft">
+          We translate the softness of watercolor into tactile prints: gentle texture, smooth gradients, and colors calibrated to glow in natural light.
+        </p>
+        <div class="grid gap-4 sm:grid-cols-2">
+          {notes.map((note) => (
+            <div class="card-soft reveal">
+              <h3 class="text-lg font-semibold text-ink">{note.title}</h3>
+              <p class="mt-2 text-sm text-ink-soft">{note.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div class="card-collection reveal">
+        <img src="/images/emerald-falls.png" alt="Emerald Falls poster" class="h-full w-full object-cover" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <section id="story" class="container-custom py-20">
+    <div class="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+      <div class="card-collection reveal">
+        <img src="/images/longtail-morning.png" alt="Longtail Morning poster" class="h-full w-full object-cover" loading="lazy" />
+      </div>
+      <div class="space-y-6">
+        <p class="section-label">Our story</p>
+        <h2 class="font-display text-4xl text-ink">A brand for modern daydreamers.</h2>
+        <p class="text-ink-soft">
+          Tinvail is built around the idea that calm can be designed. Each poster is a window into a place you might have been, or a place you are about to go.
+        </p>
+        <p class="text-ink-soft">
+          We paint women as the quiet center of every scene. The result is a collection that feels cinematic, personal, and grounding all at once.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a class="btn-primary" href="#collection">Find your place</a>
+          <a class="btn-outline" href="#faq">How it works</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-custom py-20">
+    <div class="grid gap-8 lg:grid-cols-3">
+      {steps.map((step, index) => (
+        <div class="card-soft reveal">
+          <p class="text-xs font-semibold uppercase tracking-widest text-ink-soft">Step {index + 1}</p>
+          <h3 class="mt-3 font-display text-2xl text-ink">{step.title}</h3>
+          <p class="mt-2 text-sm text-ink-soft">{step.description}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="container-custom py-20">
+    <div class="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+      <div class="space-y-6">
+        <p class="section-label">Collector notes</p>
+        <h2 class="font-display text-4xl text-ink">Rooms that hold their own stories.</h2>
+        <p class="text-ink-soft">
+          From coastal homes to quiet city apartments, Tinvail posters are chosen for spaces that value light, calm, and a sense of escape.
+        </p>
+        <div class="space-y-4">
+          <div class="card-soft reveal">
+            <p class="text-sm text-ink-soft">"The hues are gentle but confident. It changed the mood of the entire room."</p>
+            <p class="mt-3 text-xs font-semibold uppercase tracking-widest text-ink-soft">Interior stylist, Copenhagen</p>
+          </div>
+          <div class="card-soft reveal">
+            <p class="text-sm text-ink-soft">"Every morning feels like a tiny vacation. The paper quality is beautiful."</p>
+            <p class="mt-3 text-xs font-semibold uppercase tracking-widest text-ink-soft">Collector, Lisbon</p>
+          </div>
+        </div>
+      </div>
+      <div class="card-collection reveal">
+        <img src="/images/sunbreak-shore.png" alt="Sunbreak Shore poster" class="h-full w-full object-cover" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="container-custom py-20">
+    <div class="grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">
+      <div class="space-y-4">
+        <p class="section-label">FAQ</p>
+        <h2 class="font-display text-4xl text-ink">Everything you need to know.</h2>
+        <p class="text-ink-soft">Sizing, materials, and delivery details for your Tinvail poster.</p>
+      </div>
+      <div class="grid gap-4">
+        <div class="card-soft reveal">
+          <h3 class="text-lg font-semibold text-ink">What sizes are available?</h3>
+          <p class="mt-2 text-sm text-ink-soft">Select from a curated range of sizes designed to fit standard frames.</p>
+        </div>
+        <div class="card-soft reveal">
+          <h3 class="text-lg font-semibold text-ink">Do the posters include frames?</h3>
+          <p class="mt-2 text-sm text-ink-soft">Frames are not included, so you can choose the style that fits your home.</p>
+        </div>
+        <div class="card-soft reveal">
+          <h3 class="text-lg font-semibold text-ink">How are orders packaged?</h3>
+          <p class="mt-2 text-sm text-ink-soft">Prints are protected with tissue and sturdy packaging to keep them flawless.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="relative overflow-hidden py-20">
+    <div class="absolute inset-0 bg-gradient-to-r from-pearl via-cloud to-mist"></div>
+    <div class="container-custom relative z-10">
+      <div class="card-soft text-center reveal">
+        <p class="section-label">Final call</p>
+        <h2 class="font-display text-4xl text-ink">Bring a dream home.</h2>
+        <p class="mt-3 text-ink-soft">Choose a poster and let the story unfold on your walls.</p>
+        <div class="mt-6 flex flex-wrap justify-center gap-4">
+          <a class="btn-primary" href="#collection">Shop now</a>
+          <a class="btn-outline" href="mailto:studio@tinvail.com">Ask a question</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-black/5 py-12">
+    <div class="container-custom flex flex-col items-start justify-between gap-8 lg:flex-row">
+      <div class="space-y-4">
+        <div class="logo-badge">
+          <img src="/logo-transparent-2.png" alt="Tinvail" class="h-9 w-auto" />
+        </div>
+        <p class="text-sm text-ink-soft">Watercolor posters for dreamers. Calm, curated, and ready to frame.</p>
+      </div>
+      <div class="grid gap-4 text-sm text-ink-soft">
+        <span>hello@tinvail.com</span>
+        <span>Instagram: @tinvail</span>
+        <span>Worldwide shipping available</span>
+      </div>
+      <div class="text-xs text-ink-soft">(c) 2024 Tinvail. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script is:inline>
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+  </script>
+</Layout>
