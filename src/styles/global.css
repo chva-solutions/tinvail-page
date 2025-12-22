@@ -245,6 +245,7 @@ body {
 .hero-stack-right {
   position: relative;
   width: 100%;
+  --hero-tilt: 0deg;
 }
 
 .hero-stack-right img {
@@ -257,10 +258,14 @@ body {
   box-shadow: 0 18px 36px rgba(47, 42, 42, 0.12);
   border: 0;
   background: transparent;
+  --stack-tilt: 0deg;
+  transform: rotate(calc(var(--hero-tilt) + var(--stack-tilt)));
+  transition: transform 0.4s var(--ease-silk);
+  will-change: transform;
 }
 
 .hero-stack-right .stack-top {
-  transform: rotate(-1.5deg);
+  --stack-tilt: -1.5deg;
 }
 
 .hero-stack-right .stack-left {
@@ -295,7 +300,7 @@ body {
     height: 34%;
     left: 6%;
     top: 8%;
-    transform: rotate(-2deg);
+    --stack-tilt: -2deg;
     z-index: 3;
   }
 
@@ -306,7 +311,7 @@ body {
     top: 30%;
     border-radius: 28px;
     z-index: 1;
-    transform: none;
+    --stack-tilt: 0deg;
   }
 
   .hero-stack-right .stack-bottom {
@@ -315,7 +320,7 @@ body {
     height: 26%;
     right: 18%;
     bottom: 4%;
-    transform: rotate(2deg);
+    --stack-tilt: 2deg;
     z-index: 2;
   }
 }
