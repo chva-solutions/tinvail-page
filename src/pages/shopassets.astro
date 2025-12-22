@@ -1,0 +1,769 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const variants = [
+  {
+    id: 1,
+    title: 'Coastal Stack',
+    format: 'Hero 16:9',
+    ratio: '16 / 9',
+    primary: '/images/azure-veranda.jpeg',
+    secondary: '/images/evening-tide.jpeg',
+    tertiary: '/images/emerald-falls.jpeg',
+  },
+  {
+    id: 2,
+    title: 'Sunlit Square',
+    format: 'Square 1:1',
+    ratio: '1 / 1',
+    primary: '/images/sunbreak-shore.jpeg',
+    secondary: '/images/longtail-morning.jpeg',
+    tertiary: '/images/azure-veranda.jpeg',
+  },
+  {
+    id: 3,
+    title: 'Studio Portrait',
+    format: 'Portrait 4:5',
+    ratio: '4 / 5',
+    primary: '/images/crimson-cabin.jpeg',
+    secondary: '/images/evening-tide.jpeg',
+    tertiary: '/images/sunbreak-shore.jpeg',
+  },
+  {
+    id: 4,
+    title: 'Dream Story',
+    format: 'Story 9:16',
+    ratio: '9 / 16',
+    primary: '/images/emerald-falls.jpeg',
+    secondary: '/images/longtail-morning.jpeg',
+    tertiary: '/images/evening-tide.jpeg',
+  },
+  {
+    id: 5,
+    title: 'Minimal Ribbon',
+    format: 'Slim 3:1',
+    ratio: '3 / 1',
+    primary: '/images/azure-veranda.jpeg',
+    secondary: '/images/sunbreak-shore.jpeg',
+    tertiary: '/images/crimson-cabin.jpeg',
+  },
+  {
+    id: 6,
+    title: 'Gallery Poster',
+    format: 'Poster 3:4',
+    ratio: '3 / 4',
+    primary: '/images/evening-tide.jpeg',
+    secondary: '/images/emerald-falls.jpeg',
+    tertiary: '/images/azure-veranda.jpeg',
+  },
+  {
+    id: 7,
+    title: 'Horizon Ultra',
+    format: 'Panorama 21:9',
+    ratio: '21 / 9',
+    primary: '/images/sunbreak-shore.jpeg',
+    secondary: '/images/longtail-morning.jpeg',
+    tertiary: '/images/evening-tide.jpeg',
+  },
+  {
+    id: 8,
+    title: 'Cameo Card',
+    format: 'Card 5:4',
+    ratio: '5 / 4',
+    primary: '/images/longtail-morning.jpeg',
+    secondary: '/images/crimson-cabin.jpeg',
+    tertiary: '/images/emerald-falls.jpeg',
+  },
+  {
+    id: 9,
+    title: 'Brand Split',
+    format: 'Banner 2:1',
+    ratio: '2 / 1',
+    primary: '/images/azure-veranda.jpeg',
+    secondary: '/images/sunbreak-shore.jpeg',
+    tertiary: '/images/evening-tide.jpeg',
+  },
+  {
+    id: 10,
+    title: 'Soft Horizon',
+    format: 'Wide 5:2',
+    ratio: '5 / 2',
+    primary: '/images/emerald-falls.jpeg',
+    secondary: '/images/azure-veranda.jpeg',
+    tertiary: '/images/crimson-cabin.jpeg',
+  },
+];
+---
+
+<Layout title="Tinvail | Shop assets">
+  <main class="shopassets">
+    <section class="shopassets-hero">
+      <div class="hero-copy">
+        <p class="section-label">Shop assets</p>
+        <h1 class="font-display">Banner collection for your shopfront</h1>
+        <p>
+          Ten ready-to-use banners that showcase the Tinvail identity and product promise. Each layout layers
+          watercolor scenes and typography so visitors understand the brand at first glance.
+        </p>
+      </div>
+      <div class="hero-mark">
+        <div class="logo-badge">
+          <img src="/logo.png" alt="Tinvail logo" />
+        </div>
+        <span>Dreaming starts with open eyes</span>
+      </div>
+    </section>
+
+    <section class="assets-grid">
+      {variants.map((variant) => (
+        <article class={`banner-card variant-${variant.id}`}>
+          <header class="banner-meta">
+            <div>
+              <p class="meta-label">{variant.title}</p>
+              <p class="meta-format">{variant.format}</p>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="meta-chip">Product focus</span>
+              <button class="download-btn" type="button" data-download={variant.id}>Download PNG</button>
+            </div>
+          </header>
+          <div class={`banner-frame variant-${variant.id}`} id={`banner-${variant.id}`} style={`aspect-ratio: ${variant.ratio};`}>
+            <div class="banner-wash"></div>
+            <div class="banner-orb orb-a"></div>
+            <div class="banner-orb orb-b"></div>
+            <div class="banner-brush brush-a"></div>
+            <div class="banner-brush brush-b"></div>
+            <div class="banner-shots">
+              <img class="shot shot-a" src={variant.primary} alt="Tinvail poster example" loading="lazy" />
+              <img class="shot shot-b" src={variant.secondary} alt="Tinvail poster example" loading="lazy" />
+              <img class="shot shot-c" src={variant.tertiary} alt="Tinvail poster example" loading="lazy" />
+            </div>
+            <div class="banner-copy">
+              <p class="eyebrow">Tinvail watercolor posters</p>
+              <h3>Dreaming starts with open eyes</h3>
+              <p>Bring a window to faraway places into your space.</p>
+            </div>
+          </div>
+        </article>
+      ))}
+    </section>
+  </main>
+
+  <style id="shopassets-style">
+    .shopassets {
+      padding: 64px 0 120px;
+    }
+
+    .shopassets-hero {
+      max-width: 1120px;
+      margin: 0 auto 48px;
+      padding: 0 24px;
+      display: grid;
+      gap: 24px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      align-items: center;
+    }
+
+    .shopassets-hero h1 {
+      font-size: clamp(2.2rem, 3vw, 3.2rem);
+      margin: 12px 0;
+      color: var(--color-ink);
+    }
+
+    .shopassets-hero p {
+      color: var(--color-ink-soft);
+    }
+
+    .hero-mark {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: flex-start;
+      font-size: 0.95rem;
+      color: var(--color-ink-soft);
+      width: max-content;
+    }
+
+    .hero-mark img {
+      height: 40px;
+    }
+
+    .hero-mark span {
+      white-space: nowrap;
+    }
+
+    .assets-grid {
+      display: grid;
+      gap: 32px;
+      padding: 0 24px;
+      max-width: 1220px;
+      margin: 0 auto;
+    }
+
+    .banner-card {
+      display: grid;
+      gap: 16px;
+    }
+
+    .banner-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      color: var(--color-ink-soft);
+    }
+
+    .meta-label {
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      font-size: 0.7rem;
+    }
+
+    .meta-format {
+      font-weight: 600;
+      color: var(--color-ink);
+    }
+
+    .meta-chip {
+      border: 1px solid rgba(47, 42, 42, 0.12);
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.7);
+    }
+
+    .download-btn {
+      border: 1px solid rgba(47, 42, 42, 0.16);
+      background: #fff;
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-ink);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .download-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 20px rgba(47, 42, 42, 0.12);
+    }
+
+    .download-btn:disabled {
+      opacity: 0.6;
+      cursor: wait;
+    }
+
+    .banner-frame {
+      position: relative;
+      overflow: hidden;
+      border-radius: 24px;
+      background: #fff;
+      border: 1px solid rgba(47, 42, 42, 0.08);
+      box-shadow: 0 20px 50px rgba(47, 42, 42, 0.12);
+      min-height: 240px;
+    }
+
+    .banner-wash {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 10% 20%, rgba(242, 183, 200, 0.35), transparent 55%),
+        radial-gradient(circle at 90% 10%, rgba(147, 211, 240, 0.3), transparent 50%),
+        radial-gradient(circle at 40% 100%, rgba(183, 166, 231, 0.3), transparent 60%);
+    }
+
+    .banner-orb {
+      position: absolute;
+      border-radius: 999px;
+      opacity: 0.6;
+      filter: blur(2px);
+    }
+
+    .orb-a {
+      width: 220px;
+      height: 220px;
+      background: radial-gradient(circle, rgba(242, 183, 200, 0.7), rgba(242, 183, 200, 0));
+      top: -60px;
+      left: -40px;
+    }
+
+    .orb-b {
+      width: 180px;
+      height: 180px;
+      background: radial-gradient(circle, rgba(147, 211, 240, 0.65), rgba(147, 211, 240, 0));
+      bottom: -50px;
+      right: -40px;
+    }
+
+    .banner-brush {
+      position: absolute;
+      opacity: 0.35;
+      filter: blur(6px);
+      border-radius: 60px;
+      transform: rotate(-4deg);
+    }
+
+    .brush-a {
+      width: 260px;
+      height: 90px;
+      background: linear-gradient(90deg, rgba(242, 215, 166, 0.8), rgba(242, 183, 200, 0));
+      top: 30px;
+      right: 20%;
+    }
+
+    .brush-b {
+      width: 220px;
+      height: 80px;
+      background: linear-gradient(90deg, rgba(183, 166, 231, 0.7), rgba(147, 211, 240, 0));
+      bottom: 24px;
+      left: 18%;
+    }
+
+    .banner-shots img {
+      position: absolute;
+      border-radius: 18px;
+      object-fit: cover;
+      box-shadow: 0 16px 30px rgba(47, 42, 42, 0.18);
+      border: 6px solid rgba(255, 255, 255, 0.9);
+      background: #fff;
+    }
+
+    .banner-copy {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      bottom: auto;
+      max-width: none;
+      width: max-content;
+      color: var(--color-ink);
+      background: rgba(255, 255, 255, 0.8);
+      padding: 16px 18px;
+      border-radius: 18px;
+      backdrop-filter: blur(6px);
+      transform: translate(-50%, -50%);
+    }
+
+    .banner-copy .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.65rem;
+      margin-bottom: 6px;
+      color: var(--color-ink-soft);
+    }
+
+    .banner-copy h3 {
+      margin: 0 0 6px;
+      font-size: clamp(1rem, 1.4vw, 1.2rem);
+      color: var(--color-ink);
+      white-space: nowrap;
+    }
+
+    .banner-copy p {
+      margin: 0;
+      font-size: 0.85rem;
+      color: var(--color-ink-soft);
+    }
+
+    .variant-1 .shot-a {
+      width: 46%;
+      height: 68%;
+      left: 8%;
+      top: 16%;
+    }
+
+    .variant-1 .shot-b {
+      width: 30%;
+      height: 44%;
+      right: 10%;
+      top: 18%;
+      transform: rotate(2deg);
+    }
+
+    .variant-1 .shot-c {
+      width: 26%;
+      height: 36%;
+      right: 18%;
+      bottom: 12%;
+      transform: rotate(-3deg);
+    }
+
+    .variant-2 .shot-a {
+      width: 70%;
+      height: 70%;
+      left: 6%;
+      top: 10%;
+      border-radius: 22px;
+    }
+
+    .variant-2 .shot-b {
+      width: 36%;
+      height: 36%;
+      right: 8%;
+      bottom: 10%;
+      transform: rotate(4deg);
+    }
+
+    .variant-2 .shot-c {
+      width: 28%;
+      height: 28%;
+      right: 20%;
+      top: 14%;
+      transform: rotate(-4deg);
+    }
+
+    .variant-3 .shot-a {
+      width: 62%;
+      height: 60%;
+      right: 8%;
+      top: 10%;
+    }
+
+    .variant-3 .shot-b {
+      width: 40%;
+      height: 40%;
+      left: 10%;
+      bottom: 12%;
+      transform: rotate(-3deg);
+    }
+
+    .variant-3 .shot-c {
+      width: 30%;
+      height: 30%;
+      left: 20%;
+      top: 6%;
+      transform: rotate(3deg);
+    }
+
+    .variant-4 .shot-a {
+      width: 72%;
+      height: 54%;
+      right: 10%;
+      top: 12%;
+      border-radius: 28px;
+    }
+
+    .variant-4 .shot-b {
+      width: 44%;
+      height: 34%;
+      left: 6%;
+      top: 8%;
+      transform: rotate(-2deg);
+    }
+
+    .variant-4 .shot-c {
+      width: 38%;
+      height: 26%;
+      right: 18%;
+      bottom: 14%;
+      transform: rotate(2deg);
+    }
+
+    .variant-5 .shot-a {
+      width: 30%;
+      height: 70%;
+      left: 34%;
+      top: 15%;
+      border-radius: 40px;
+    }
+
+    .variant-5 .shot-b {
+      width: 24%;
+      height: 60%;
+      left: 8%;
+      top: 20%;
+      transform: rotate(-2deg);
+    }
+
+    .variant-5 .shot-c {
+      width: 24%;
+      height: 60%;
+      right: 8%;
+      top: 20%;
+      transform: rotate(2deg);
+    }
+
+    .variant-6 .shot-a {
+      width: 55%;
+      height: 70%;
+      left: 6%;
+      top: 10%;
+    }
+
+    .variant-6 .shot-b {
+      width: 36%;
+      height: 40%;
+      right: 12%;
+      top: 12%;
+      transform: rotate(3deg);
+    }
+
+    .variant-6 .shot-c {
+      width: 36%;
+      height: 32%;
+      right: 10%;
+      bottom: 12%;
+      transform: rotate(-3deg);
+    }
+
+    .variant-7 .shot-a {
+      width: 55%;
+      height: 70%;
+      left: 10%;
+      top: 12%;
+    }
+
+    .variant-7 .shot-b {
+      width: 30%;
+      height: 52%;
+      right: 8%;
+      top: 12%;
+      transform: rotate(2deg);
+    }
+
+    .variant-7 .shot-c {
+      width: 26%;
+      height: 44%;
+      right: 18%;
+      bottom: 10%;
+      transform: rotate(-2deg);
+    }
+
+    .variant-7 .banner-copy {
+      top: 58%;
+    }
+
+    .variant-8 .shot-a {
+      width: 54%;
+      height: 64%;
+      left: 8%;
+      top: 12%;
+      border-radius: 28px;
+    }
+
+    .variant-8 .shot-b {
+      width: 34%;
+      height: 40%;
+      right: 10%;
+      top: 10%;
+      transform: rotate(-3deg);
+    }
+
+    .variant-8 .shot-c {
+      width: 30%;
+      height: 36%;
+      right: 16%;
+      bottom: 10%;
+      transform: rotate(3deg);
+    }
+
+    .variant-9 .shot-a {
+      width: 42%;
+      height: 68%;
+      left: 6%;
+      top: 16%;
+    }
+
+    .variant-9 .shot-b {
+      width: 28%;
+      height: 50%;
+      left: 40%;
+      top: 10%;
+      transform: rotate(-2deg);
+    }
+
+    .variant-9 .shot-c {
+      width: 30%;
+      height: 52%;
+      right: 6%;
+      top: 18%;
+      transform: rotate(2deg);
+    }
+
+    .variant-10 .shot-a {
+      width: 50%;
+      height: 70%;
+      left: 6%;
+      top: 12%;
+    }
+
+    .variant-10 .shot-b {
+      width: 34%;
+      height: 52%;
+      right: 12%;
+      top: 12%;
+      transform: rotate(3deg);
+    }
+
+    .variant-10 .shot-c {
+      width: 30%;
+      height: 40%;
+      right: 18%;
+      bottom: 10%;
+      transform: rotate(-2deg);
+    }
+
+    @media (max-width: 900px) {
+      .banner-frame {
+        min-height: 300px;
+      }
+
+      .banner-shots img {
+        border-width: 4px;
+      }
+    }
+  </style>
+
+  <script is:inline>
+    const styleTag = document.getElementById('shopassets-style');
+    const styleText = styleTag ? styleTag.textContent : '';
+    const rootStyles = getComputedStyle(document.documentElement);
+    const varNames = [
+      '--color-ink',
+      '--color-ink-soft',
+      '--color-pearl',
+      '--color-cloud',
+      '--color-blush',
+      '--color-lilac',
+      '--color-sky',
+      '--color-aqua',
+      '--color-gold',
+      '--color-rose',
+      '--color-mist',
+      '--font-display',
+      '--font-sans',
+    ];
+
+    const rootVars = varNames
+      .map((name) => `${name}:${rootStyles.getPropertyValue(name).trim()};`)
+      .join('');
+
+    const fetchAsDataUrl = async (src) => {
+      const response = await fetch(src);
+      if (!response.ok) throw new Error('Image request failed.');
+      const blob = await response.blob();
+      return await new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = () => reject(new Error('Image decode failed.'));
+        reader.readAsDataURL(blob);
+      });
+    };
+
+    const inlineImages = async (node) => {
+      const images = Array.from(node.querySelectorAll('img'));
+      await Promise.all(
+        images.map(async (img) => {
+          const src = img.getAttribute('src');
+          if (!src) return;
+          const absolute = src.startsWith('http')
+            ? src
+            : new URL(src, window.location.origin).toString();
+          try {
+            const dataUrl = await fetchAsDataUrl(absolute);
+            img.setAttribute('src', dataUrl);
+          } catch (error) {
+            img.setAttribute('src', absolute);
+          }
+          img.setAttribute('loading', 'eager');
+        })
+      );
+    };
+
+    const downloadSvg = (svg, id) => {
+      const svgBlob = new Blob([svg], { type: 'image/svg+xml;charset=utf-8' });
+      const svgUrl = URL.createObjectURL(svgBlob);
+      const link = document.createElement('a');
+      link.href = svgUrl;
+      link.download = `tinvail-banner-${id}.svg`;
+      link.click();
+      URL.revokeObjectURL(svgUrl);
+    };
+
+    const buildSvg = async (node, width, height) => {
+      const clone = node.cloneNode(true);
+      clone.style.margin = '0';
+      clone.style.width = `${width}px`;
+      clone.style.height = `${height}px`;
+
+      await inlineImages(clone);
+
+      const html = new XMLSerializer().serializeToString(clone);
+
+      return `\n<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">\n  <foreignObject width="100%" height="100%">\n    <div xmlns="http://www.w3.org/1999/xhtml" style="width:${width}px;height:${height}px;">\n      <style>\n        :root { ${rootVars} }\n        * { box-sizing: border-box; }\n        img { max-width: 100%; height: auto; display: block; }\n        ${styleText}\n      </style>\n      ${html}\n    </div>\n  </foreignObject>\n</svg>`;
+    };
+
+    const downloadBanner = async (id, button) => {
+      const banner = document.getElementById(`banner-${id}`);
+      if (!banner) return;
+      const rect = banner.getBoundingClientRect();
+      const width = Math.round(rect.width);
+      const height = Math.round(rect.height);
+
+      const svg = await buildSvg(banner, width, height);
+      const blob = new Blob([svg], { type: 'image/svg+xml;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const img = new Image();
+      img.crossOrigin = 'anonymous';
+
+      if (button) {
+        button.disabled = true;
+        button.textContent = 'Rendering...';
+      }
+
+      img.onload = async () => {
+        const canvas = document.createElement('canvas');
+        canvas.width = width;
+        canvas.height = height;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0);
+        URL.revokeObjectURL(url);
+
+        try {
+          const pngBlob = await new Promise((resolve, reject) => {
+            try {
+              canvas.toBlob((blobResult) => {
+                if (blobResult) resolve(blobResult);
+                else reject(new Error('PNG render failed.'));
+              }, 'image/png');
+            } catch (error) {
+              reject(error);
+            }
+          });
+          const pngUrl = URL.createObjectURL(pngBlob);
+          const link = document.createElement('a');
+          link.href = pngUrl;
+          link.download = `tinvail-banner-${id}.jpeg`;
+          link.click();
+          URL.revokeObjectURL(pngUrl);
+        } catch (error) {
+          downloadSvg(svg, id);
+          alert('PNG export was blocked by the browser. Downloading SVG instead.');
+        }
+
+        if (button) {
+          button.disabled = false;
+          button.textContent = 'Download PNG';
+        }
+      };
+
+      img.onerror = () => {
+        URL.revokeObjectURL(url);
+        if (button) {
+          button.disabled = false;
+          button.textContent = 'Download PNG';
+        }
+        downloadSvg(svg, id);
+        alert('Unable to render PNG. Downloading SVG instead.');
+      };
+
+      img.src = url;
+    };
+
+    document.querySelectorAll('[data-download]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const id = button.getAttribute('data-download');
+        if (id) downloadBanner(id, button);
+      });
+    });
+  </script>
+</Layout>
