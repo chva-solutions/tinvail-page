@@ -102,19 +102,39 @@ const notes = [
     <div class="watercolor-orb sky" style="width: 260px; height: 260px; top: 40px; right: -80px;"></div>
     <div class="watercolor-orb lilac" style="width: 320px; height: 320px; bottom: -160px; right: 12%;"></div>
 
-    <header class="container-custom header-shell relative z-10 flex items-center justify-between py-6">
-      <div class="logo-badge">
-        <img src={logoUrl} alt="Tinvail logo" class="h-9 w-auto" />
+    <header class="container-custom header-shell relative z-10 py-6">
+      <div class="header-rail">
+        <div class="logo-badge hero-logo">
+          <img src={logoUrl} alt="Tinvail logo" class="w-auto" />
+        </div>
+        <nav class="desktop-nav items-center gap-8 text-sm font-semibold text-ink-soft lg:mx-10 xl:mx-16">
+          <a class="hover:text-ink transition" href="#collection">Collection</a>
+          <a class="hover:text-ink transition" href="#craft">Craft</a>
+          <a class="hover:text-ink transition" href="#story">Story</a>
+          <a class="hover:text-ink transition" href="#faq">FAQ</a>
+        </nav>
+        <div class="desktop-cta items-center gap-3">
+          <a class="btn-outline" href="#collection">View gallery</a>
+          <a class="btn-primary" href="#collection">Shop the collection</a>
+        </div>
+        <button class="menu-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false">
+          <span class="sr-only">Toggle menu</span>
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+        </button>
       </div>
-      <nav class="hidden items-center gap-8 text-sm font-semibold text-ink-soft lg:flex lg:mx-10 xl:mx-16">
-        <a class="hover:text-ink transition" href="#collection">Collection</a>
-        <a class="hover:text-ink transition" href="#craft">Craft</a>
-        <a class="hover:text-ink transition" href="#story">Story</a>
-        <a class="hover:text-ink transition" href="#faq">FAQ</a>
-      </nav>
-      <div class="flex items-center gap-3">
-        <a class="btn-outline hidden sm:inline-flex" href="#collection">View gallery</a>
-        <a class="btn-primary" href="#collection">Shop the collection</a>
+      <div id="mobile-menu" class="mobile-menu" hidden>
+        <nav class="mobile-nav">
+          <a class="hover:text-ink transition" href="#collection">Collection</a>
+          <a class="hover:text-ink transition" href="#craft">Craft</a>
+          <a class="hover:text-ink transition" href="#story">Story</a>
+          <a class="hover:text-ink transition" href="#faq">FAQ</a>
+        </nav>
+        <div class="mobile-cta">
+          <a class="btn-outline" href="#collection">View gallery</a>
+          <a class="btn-primary" href="#collection">Shop the collection</a>
+        </div>
       </div>
     </header>
 
@@ -416,6 +436,27 @@ const notes = [
       updateTilt();
       window.addEventListener('scroll', onScroll, { passive: true });
       window.addEventListener('resize', onScroll);
+    }
+
+    const menuButton = document.querySelector('.menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (menuButton && mobileMenu) {
+      const setMenuState = (open) => {
+        menuButton.setAttribute('aria-expanded', String(open));
+        mobileMenu.hidden = !open;
+      };
+
+      menuButton.addEventListener('click', () => {
+        const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+        setMenuState(!isOpen);
+      });
+
+      mobileMenu.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => setMenuState(false));
+      });
+
+      setMenuState(false);
     }
   </script>
 </Layout>
