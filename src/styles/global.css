@@ -444,11 +444,11 @@ body {
 @media (min-width: 640px) {
   .hero-logo img {
     width: auto;
-    height: 36px;
+    height: 42px;
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .header-rail {
     display: flex;
     align-items: center;
@@ -461,7 +461,7 @@ body {
 
   .hero-logo img {
     width: auto;
-    height: 36px;
+    height: 52px;
   }
 
   .desktop-nav,
@@ -472,6 +472,12 @@ body {
   .menu-toggle,
   .mobile-menu {
     display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-logo img {
+    height: 72px;
   }
 }
 
