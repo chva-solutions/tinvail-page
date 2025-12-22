@@ -107,22 +107,24 @@ const notes = [
         <div class="logo-badge hero-logo">
           <img src={logoUrl} alt="Tinvail logo" class="w-auto" />
         </div>
-        <nav class="desktop-nav items-center gap-8 text-sm font-semibold text-ink-soft lg:mx-10 xl:mx-16">
-          <a class="hover:text-ink transition" href="#collection">Collection</a>
-          <a class="hover:text-ink transition" href="#craft">Craft</a>
-          <a class="hover:text-ink transition" href="#story">Story</a>
-          <a class="hover:text-ink transition" href="#faq">FAQ</a>
-        </nav>
-        <div class="desktop-cta items-center gap-3">
-          <a class="btn-outline" href="#collection">View gallery</a>
-          <a class="btn-primary" href="#collection">Shop the collection</a>
-        </div>
         <button class="menu-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false">
           <span class="sr-only">Toggle menu</span>
           <span class="menu-bar"></span>
           <span class="menu-bar"></span>
           <span class="menu-bar"></span>
         </button>
+        <div class="header-links">
+          <nav class="desktop-nav items-center gap-8 text-sm font-semibold text-ink-soft lg:mx-10 xl:mx-16">
+            <a class="hover:text-ink transition" href="#collection">Collection</a>
+            <a class="hover:text-ink transition" href="#craft">Craft</a>
+            <a class="hover:text-ink transition" href="#story">Story</a>
+            <a class="hover:text-ink transition" href="#faq">FAQ</a>
+          </nav>
+          <div class="desktop-cta items-center gap-3">
+            <a class="btn-outline" href="#collection">View gallery</a>
+            <a class="btn-primary" href="#collection">Shop the collection</a>
+          </div>
+        </div>
       </div>
       <div id="mobile-menu" class="mobile-menu" hidden>
         <nav class="mobile-nav">
