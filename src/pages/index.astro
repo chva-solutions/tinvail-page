@@ -1,47 +1,51 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
+const base = import.meta.env.BASE_URL;
+const imageUrl = (filename) => `${base}images/${filename}`;
+const logoUrl = `${base}logo.png`;
+
 const collection = [
   {
     title: 'Coastal Light',
     location: 'Example scene: veranda by the sea with palms',
     mood: 'Mood: airy, elegant, sunlit',
-    image: '/images/azure-veranda.jpeg',
+    image: imageUrl('azure-veranda.jpeg'),
     alt: 'Watercolor scene of a woman in a white dress walking along a seaside veranda with palm trees.',
   },
   {
     title: 'Sunbreak Shore',
     location: 'Example scene: shoreline with radiant sky',
     mood: 'Mood: hopeful, open, expansive',
-    image: '/images/sunbreak-shore.jpeg',
+    image: imageUrl('sunbreak-shore.jpeg'),
     alt: 'Watercolor scene of a woman on a beach beneath dramatic clouds and sun rays over the ocean.',
   },
   {
     title: 'Forest Retreat',
     location: 'Example scene: quiet path toward a cabin',
     mood: 'Mood: grounded, fresh, nostalgic',
-    image: '/images/crimson-cabin.jpeg',
+    image: imageUrl('crimson-cabin.jpeg'),
     alt: 'Watercolor scene of a woman walking toward a red cabin in a lush forest clearing.',
   },
   {
     title: 'Morning Tide',
     location: 'Example scene: calm beach with a wooden boat',
     mood: 'Mood: soft breeze, slow pace, wanderlust',
-    image: '/images/longtail-morning.jpeg',
+    image: imageUrl('longtail-morning.jpeg'),
     alt: 'Watercolor scene of a woman on a beach beside a wooden longtail boat and turquoise water.',
   },
   {
     title: 'Evening Glow',
     location: 'Example scene: dusk reflections on the water',
     mood: 'Mood: dreamy, reflective, poetic',
-    image: '/images/evening-tide.jpeg',
+    image: imageUrl('evening-tide.jpeg'),
     alt: 'Watercolor scene of a silhouetted woman at sunset on a beach with colorful sky reflections.',
   },
   {
     title: 'Hidden Falls',
     location: 'Example scene: waterfall tucked in the jungle',
     mood: 'Mood: lush, serene, renewing',
-    image: '/images/emerald-falls.jpeg',
+    image: imageUrl('emerald-falls.jpeg'),
     alt: 'Watercolor scene of a woman in a white dress looking at a jungle waterfall surrounded by greenery.',
   },
 ];
@@ -100,7 +104,7 @@ const notes = [
 
     <header class="container-custom header-shell relative z-10 flex items-center justify-between py-6">
       <div class="logo-badge">
-        <img src="/logo.png" alt="Tinvail logo" class="h-9 w-auto" />
+        <img src={logoUrl} alt="Tinvail logo" class="h-9 w-auto" />
       </div>
       <nav class="hidden items-center gap-8 text-sm font-semibold text-ink-soft lg:flex lg:mx-10 xl:mx-16">
         <a class="hover:text-ink transition" href="#collection">Collection</a>
@@ -144,9 +148,9 @@ const notes = [
       </div>
 
       <div class="hero-stack-right animate-rise delay-1">
-        <img src="/images/azure-veranda.jpeg" alt="Coastal Light poster" class="stack-left" loading="lazy" />
-        <img src="/images/evening-tide.jpeg" alt="Evening Glow poster" class="stack-top" loading="lazy" />
-        <img src="/images/crimson-cabin.jpeg" alt="Forest Retreat poster" class="stack-bottom" loading="lazy" />
+        <img src={imageUrl('azure-veranda.jpeg')} alt="Coastal Light poster" class="stack-left" loading="lazy" />
+        <img src={imageUrl('evening-tide.jpeg')} alt="Evening Glow poster" class="stack-top" loading="lazy" />
+        <img src={imageUrl('crimson-cabin.jpeg')} alt="Forest Retreat poster" class="stack-bottom" loading="lazy" />
       </div>
     </section>
   </div>
@@ -210,7 +214,7 @@ const notes = [
         </div>
       </div>
       <div class="card-collection reveal">
-        <img src="/images/emerald-falls.jpeg" alt="Hidden Falls poster" class="h-full w-full object-cover" loading="lazy" />
+        <img src={imageUrl('emerald-falls.jpeg')} alt="Hidden Falls poster" class="h-full w-full object-cover" loading="lazy" />
       </div>
     </div>
   </section>
@@ -218,7 +222,7 @@ const notes = [
   <section id="story" class="container-custom py-32 mt-12">
     <div class="grid gap-16 lg:grid-cols-[0.9fr_1.1fr] items-start pt-8">
       <div class="card-collection reveal self-start">
-        <img src="/images/longtail-morning.jpeg" alt="Morning Tide poster" class="block w-full h-auto" loading="lazy" />
+        <img src={imageUrl('longtail-morning.jpeg')} alt="Morning Tide poster" class="block w-full h-auto" loading="lazy" />
       </div>
       <div class="space-y-10">
         <p class="section-label">tinvail — Brand Story</p>
@@ -299,7 +303,7 @@ const notes = [
         </div>
       </div>
       <div class="card-collection reveal self-start">
-        <img src="/images/sunbreak-shore.jpeg" alt="Sunbreak Shore poster" class="block w-full h-auto" loading="lazy" />
+        <img src={imageUrl('sunbreak-shore.jpeg')} alt="Sunbreak Shore poster" class="block w-full h-auto" loading="lazy" />
       </div>
     </div>
   </section>
@@ -354,7 +358,7 @@ const notes = [
     <div class="container-custom flex flex-col items-start justify-between gap-8 lg:flex-row">
       <div class="space-y-4">
         <div class="logo-badge">
-          <img src="/logo.png" alt="Tinvail" class="h-9 w-auto" />
+          <img src={logoUrl} alt="Tinvail" class="h-9 w-auto" />
         </div>
         <p class="text-sm text-ink-soft">Watercolor posters for dreamers. Calm, curated, and ready to frame.</p>
       </div>
