@@ -245,7 +245,7 @@ body {
 .hero-stack-right {
   position: relative;
   width: 100%;
-  --hero-tilt: 0deg;
+  --hero-tilt: -5deg;
 }
 
 .hero-stack-right img {

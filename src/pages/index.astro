@@ -394,12 +394,13 @@ const notes = [
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     if (heroStack && !prefersReduced) {
+      const baseTilt = -5;
       const maxTilt = 15;
       let ticking = false;
 
       const updateTilt = () => {
         const progress = Math.min(Math.max(window.scrollY / (window.innerHeight * 0.8), 0), 1);
-        const tilt = progress * maxTilt;
+        const tilt = baseTilt + progress * maxTilt;
         heroStack.style.setProperty('--hero-tilt', `${tilt}deg`);
       };
 
