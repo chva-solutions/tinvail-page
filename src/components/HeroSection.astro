@@ -1,0 +1,43 @@
+---
+import TrustBadges from './TrustBadges.astro';
+
+const { headline, subline, primaryCta, secondaryCta, trustBadges, image, secondaryImage, note } = Astro.props;
+---
+
+<section class="hero-section">
+  <div class="container-custom hero-grid">
+    <div class="space-y-6">
+      <p class="section-label">Tinvail art prints</p>
+      <h1 class="font-display text-4xl text-ink sm:text-5xl lg:text-6xl">{headline}</h1>
+      <p class="text-lg text-ink-soft max-w-xl">{subline}</p>
+      <div class="flex flex-wrap gap-4">
+        <a class="btn-primary" href={primaryCta.href}>{primaryCta.label}</a>
+        <a class="btn-outline" href={secondaryCta.href}>{secondaryCta.label}</a>
+      </div>
+      {note && <p class="text-sm text-ink-soft">{note}</p>}
+      <TrustBadges items={trustBadges} />
+    </div>
+    <div class="hero-media">
+      <div class="hero-main">
+        <img
+          src={image.src}
+          alt={image.alt}
+          loading="eager"
+          width={image.width}
+          height={image.height}
+        />
+      </div>
+      {secondaryImage && (
+        <div class="hero-secondary">
+          <img
+            src={secondaryImage.src}
+            alt={secondaryImage.alt}
+            loading="lazy"
+            width={secondaryImage.width}
+            height={secondaryImage.height}
+          />
+        </div>
+      )}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,20 @@
+---
+const { id, title, features } = Astro.props;
+---
+
+<section id={id} class="section-block">
+  <div class="container-custom space-y-10">
+    <div class="space-y-3">
+      <p class="section-label">Why Tinvail</p>
+      <h2 class="font-display text-3xl text-ink sm:text-4xl">{title}</h2>
+    </div>
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      {features.map((feature) => (
+        <div class="card-soft">
+          <h3 class="text-lg font-semibold text-ink">{feature.title}</h3>
+          <p class="mt-2 text-sm text-ink-soft">{feature.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

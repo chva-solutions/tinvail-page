@@ -1,0 +1,50 @@
+---
+import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
+const heroImage = `${base}images/longtail-morning.jpeg`;
+---
+
+<Layout title="Tinvail | Our Story" description="The story behind Tinvail and the travel-inspired prints that shape the collection.">
+  <section class="container-custom section-block">
+    <div class="grid gap-10 lg:grid-cols-[1fr_1.1fr] items-start">
+      <div class="card-collection">
+        <img src={heroImage} alt="Watercolor print of a woman walking along a calm beach" loading="lazy" width="900" height="1100" />
+      </div>
+      <div class="space-y-6">
+        <p class="section-label">Our Story</p>
+        <h1 class="font-display text-4xl text-ink">Where the dreaming became true</h1>
+        <div class="space-y-4 text-ink-soft max-w-xl">
+          <p>
+            Over the past seven years, I traveled through 67 countries. I stood barefoot on endless beaches. I found
+            myself in forgotten temples, hidden deep in the jungle. Walked untamed paths, surrounded by silence and
+            life at the same time, and watched sunsets that softened something inside me.
+          </p>
+          <p>With every place, I changed.</p>
+          <p>
+            The world did not just show me beauty, it showed me strength. It taught me how to listen to myself again.
+            How to trust my intuition. How to love the woman I was becoming.
+          </p>
+          <p>
+            In those quiet moments, I discovered something new, the power to create. Not for approval. Not for
+            perfection. But from truth.
+          </p>
+          <p>
+            I began to capture these memories and create something new from them. These experiences filled me. Each
+            picture became proof that I could shape my own reality, that I could turn feeling into form, dreams into
+            something real. They gave me energy, courage, and space to grow beyond fear and into self-love.
+          </p>
+          <p>Now, I want to share this with you.</p>
+          <p>
+            I want you to step into untouched nature with me. To feel the warmth, the stillness, the freedom. To
+            travel to the most beautiful places on earth. Not to escape your life, but to return to yourself.
+          </p>
+          <p>
+            Tinvail is a reflection of my journey. A reminder that healing, beauty, and creation begin the moment you
+            allow yourself to believe again.
+          </p>
+          <p class="font-display text-xl text-ink">Because: "Dreaming starts with open eyes"</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

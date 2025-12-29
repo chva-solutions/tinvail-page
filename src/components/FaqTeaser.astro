@@ -1,0 +1,24 @@
+---
+const { id, title, description, items, cta } = Astro.props;
+---
+
+<section id={id} class="section-block">
+  <div class="container-custom space-y-10">
+    <div class="space-y-3">
+      <p class="section-label">FAQ & Shipping</p>
+      <h2 class="font-display text-3xl text-ink sm:text-4xl">{title}</h2>
+      <p class="text-ink-soft max-w-xl">{description}</p>
+    </div>
+    <div class="faq-grid">
+      {items.map((item) => (
+        <details class="faq-item">
+          <summary>{item.question}</summary>
+          <p>{item.answer}</p>
+        </details>
+      ))}
+    </div>
+    {cta && (
+      <a class="btn-outline" href={cta.href}>{cta.label}</a>
+    )}
+  </div>
+</section>

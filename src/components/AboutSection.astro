@@ -1,0 +1,16 @@
+---
+const { id, title, paragraphs, link } = Astro.props;
+---
+
+<section id={id} class="section-block">
+  <div class="container-custom space-y-6">
+    <p class="section-label">About</p>
+    <h2 class="font-display text-3xl text-ink sm:text-4xl">{title}</h2>
+    <div class="space-y-4 text-ink-soft max-w-2xl">
+      {paragraphs.map((paragraph) => (
+        <p>{paragraph}</p>
+      ))}
+    </div>
+    <a class="btn-outline" href={link.href}>{link.label}</a>
+  </div>
+</section>

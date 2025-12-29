@@ -1,0 +1,30 @@
+---
+const { id, title, description, products, cta } = Astro.props;
+---
+
+<section id={id} class="section-block">
+  <div class="container-custom space-y-10">
+    <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+      <div class="space-y-3">
+        <p class="section-label">Shop now</p>
+        <h2 class="font-display text-3xl text-ink sm:text-4xl">{title}</h2>
+        {description && <p class="text-ink-soft max-w-xl">{description}</p>}
+      </div>
+      <a class="btn-outline" href={cta.href}>{cta.label}</a>
+    </div>
+    <div class="grid gap-6 grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
+      {products.map((product) => (
+        <a class="product-card" href={product.href}>
+          <img src={product.image} alt={product.alt} loading="lazy" width="600" height="720" />
+          <div class="product-meta">
+            <div>
+              <h3 class="text-lg font-semibold text-ink">{product.title}</h3>
+              <p class="text-sm text-ink-soft">{product.subtitle}</p>
+            </div>
+            <span class="price-tag">{product.price}</span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

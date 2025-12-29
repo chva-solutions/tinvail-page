@@ -1,0 +1,37 @@
+---
+const { logoUrl, navLinks, legalLinks, socialLinks } = Astro.props;
+---
+
+<footer class="site-footer">
+  <div class="container-custom footer-grid">
+    <div class="space-y-4">
+      <a class="logo-badge shop-logo" href="/">
+        <img src={logoUrl} alt="Tinvail" />
+      </a>
+      <p class="text-sm text-ink-soft max-w-xs">
+        Curated travel-inspired art prints designed for calm, modern spaces.
+      </p>
+    </div>
+    <div class="footer-column">
+      <h3>Shop</h3>
+      {navLinks.map((link) => (
+        <a href={link.href}>{link.label}</a>
+      ))}
+    </div>
+    <div class="footer-column">
+      <h3>Legal</h3>
+      {legalLinks.map((link) => (
+        <a href={link.href}>{link.label}</a>
+      ))}
+    </div>
+    <div class="footer-column">
+      <h3>Connect</h3>
+      {socialLinks.map((link) => (
+        <a href={link.href}>{link.label}</a>
+      ))}
+    </div>
+  </div>
+  <div class="container-custom footer-bottom">
+    <span>(c) 2025 Tinvail. All rights reserved.</span>
+  </div>
+</footer>
