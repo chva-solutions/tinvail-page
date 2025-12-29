@@ -27,7 +27,9 @@ const { logoUrl, navLinks, legalLinks, socialLinks } = Astro.props;
     <div class="footer-column">
       <h3>Connect</h3>
       {socialLinks.map((link) => (
-        <a href={link.href}>{link.label}</a>
+        <a href={link.href} aria-label={link.ariaLabel} class="social-pill">
+          <span>{link.label}</span>
+        </a>
       ))}
     </div>
   </div>

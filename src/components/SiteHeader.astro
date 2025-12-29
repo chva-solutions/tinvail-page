@@ -14,29 +14,6 @@ const { logoUrl, navLinks, ctaLinks } = Astro.props;
       ))}
     </nav>
 
-    <div class="header-actions" aria-label="Quick actions">
-      <button class="icon-button" type="button" aria-label="Search">
-        <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
-          <circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.5" />
-          <path d="M16.5 16.5L21 21" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
-        </svg>
-      </button>
-      <button class="icon-button" type="button" aria-label="Cart">
-        <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
-          <path
-            d="M6 7h14l-1.6 8.2a2 2 0 0 1-2 1.6H9.1a2 2 0 0 1-2-1.6L5 4H2"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-          <circle cx="9" cy="20" r="1.5" fill="currentColor" />
-          <circle cx="17" cy="20" r="1.5" fill="currentColor" />
-        </svg>
-      </button>
-    </div>
-
     <details class="mobile-menu">
       <summary class="icon-button" aria-label="Open menu">
         <span class="sr-only">Open menu</span>
@@ -54,28 +31,6 @@ const { logoUrl, navLinks, ctaLinks } = Astro.props;
           {ctaLinks.map((cta) => (
             <a class={cta.variant} href={cta.href}>{cta.label}</a>
           ))}
-        </div>
-        <div class="mobile-actions">
-          <button class="icon-button" type="button" aria-label="Search">
-            <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
-              <circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.5" />
-              <path d="M16.5 16.5L21 21" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
-            </svg>
-          </button>
-          <button class="icon-button" type="button" aria-label="Cart">
-            <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
-              <path
-                d="M6 7h14l-1.6 8.2a2 2 0 0 1-2 1.6H9.1a2 2 0 0 1-2-1.6L5 4H2"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <circle cx="9" cy="20" r="1.5" fill="currentColor" />
-              <circle cx="17" cy="20" r="1.5" fill="currentColor" />
-            </svg>
-          </button>
         </div>
       </div>
     </details>

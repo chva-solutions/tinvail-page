@@ -3,7 +3,6 @@ import Layout from '../layouts/Layout.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import HeroSection from '../components/HeroSection.astro';
 import ProductGrid from '../components/ProductGrid.astro';
-import CollectionGrid from '../components/CollectionGrid.astro';
 import FeatureList from '../components/FeatureList.astro';
 import FaqTeaser from '../components/FaqTeaser.astro';
 import AboutSection from '../components/AboutSection.astro';
@@ -17,18 +16,18 @@ const navLinks = [
   { label: 'Shop', href: '#bestsellers' },
   { label: 'Bestsellers', href: '#bestsellers' },
   { label: 'About', href: '#about' },
-  { label: 'FAQ / Shipping', href: '#faq' },
+  { label: 'FAQ', href: '#faq' },
 ];
 
 const headerCtas = [
   { label: 'Shop bestsellers', href: '#bestsellers', variant: 'btn-primary' },
-  { label: 'Browse all prints', href: '#collections', variant: 'btn-outline' },
+  { label: 'Browse all prints', href: 'https://shop.tinvail.art', variant: 'btn-outline' },
 ];
 
 const heroContent = {
   headline: 'Modern travel-inspired art prints for your space.',
-  subline: 'Museum-grade prints in curated scenes, shipped worldwide.',
-  note: 'Multiple sizes and finishes, pricing varies by size.',
+  subline: 'Multiple sizes and paper finishes in curated scenes, shipped worldwide.',
+  note: 'From $14.99 USD. Pricing varies by size and paper.',
   image: {
     src: imageUrl('sunbreak-shore.jpeg'),
     alt: 'Watercolor print of a figure on a beach with sun rays and ocean horizon.',
@@ -42,12 +41,12 @@ const heroContent = {
     height: 720,
   },
   trustBadges: [
-    { icon: '✓', label: 'Museum-grade print quality' },
-    { icon: '✓', label: 'Secure checkout' },
+    { icon: '✓', label: 'Multiple sizes available' },
+    { icon: '✓', label: 'Premium paper options' },
     { icon: '✓', label: 'Fast worldwide shipping' },
   ],
   primaryCta: { label: 'Shop bestsellers', href: '#bestsellers' },
-  secondaryCta: { label: 'Browse all prints', href: '#collections' },
+  secondaryCta: { label: 'Browse all prints', href: 'https://shop.tinvail.art' },
 };
 
 // TODO: Replace mock products with real commerce data and product routes.
@@ -102,50 +101,11 @@ const bestsellers = [
   },
 ];
 
-// TODO: Replace with real collection data and routes.
-const collections = [
-  {
-    label: 'Coastal',
-    image: imageUrl('azure-veranda.jpeg'),
-    alt: 'Coastal watercolor scene with a veranda and palms.',
-    href: '#collections',
-  },
-  {
-    label: 'Sunlit',
-    image: imageUrl('sunbreak-shore.jpeg'),
-    alt: 'Sunlit shoreline watercolor scene.',
-    href: '#collections',
-  },
-  {
-    label: 'Forest',
-    image: imageUrl('crimson-cabin.jpeg'),
-    alt: 'Forest cabin watercolor scene.',
-    href: '#collections',
-  },
-  {
-    label: 'Islands',
-    image: imageUrl('longtail-morning.jpeg'),
-    alt: 'Island beach watercolor scene with a longtail boat.',
-    href: '#collections',
-  },
-  {
-    label: 'Dusk',
-    image: imageUrl('evening-tide.jpeg'),
-    alt: 'Dusk beach watercolor scene.',
-    href: '#collections',
-  },
-  {
-    label: 'Jungle',
-    image: imageUrl('emerald-falls.jpeg'),
-    alt: 'Jungle waterfall watercolor scene.',
-    href: '#collections',
-  },
-];
 
 const features = [
   {
     title: 'Archival inks and premium paper',
-    description: 'Museum-grade materials selected for color depth and longevity.',
+    description: 'Premium paper options calibrated for depth and vibrancy.',
   },
   {
     title: 'Multiple sizes, easy framing',
@@ -156,12 +116,24 @@ const features = [
     description: 'Each print is selected for atmosphere, balance, and light.',
   },
   {
-    title: 'Satisfaction-first support',
-    description: 'Clear communication and help whenever you need it.',
+    title: 'Paper finish options',
+    description: 'Fine Art, Semi Gloss, and Matte finishes to match your space.',
   },
 ];
 
 const faqItems = [
+  {
+    question: 'Printed on',
+    answer: 'Premium museum grade matte paper for depth and vibrancy.',
+  },
+  {
+    question: 'Available sizes',
+    answer: '12″×18″, 24″×36″.',
+  },
+  {
+    question: 'Paper weights',
+    answer: 'Semi Gloss 180 to 260 g/m². Matte 189 to 200 g/m².',
+  },
   {
     question: 'Shipping times',
     answer: 'Shipping timelines are shown at checkout based on your destination.',
@@ -169,10 +141,6 @@ const faqItems = [
   {
     question: 'Returns policy',
     answer: 'If a print arrives damaged, we will make it right. Full policy is available at checkout.',
-  },
-  {
-    question: 'Print quality',
-    answer: 'Archival inks, premium paper, and careful packaging keep every print crisp and protected.',
   },
 ];
 
@@ -189,27 +157,28 @@ const aboutContent = {
 const footerLinks = [
   { label: 'Shop', href: '#bestsellers' },
   { label: 'Bestsellers', href: '#bestsellers' },
-  { label: 'Collections', href: '#collections' },
   { label: 'About', href: '#about' },
   { label: 'FAQ', href: '#faq' },
-  { label: 'Shipping', href: '/shipping' },
   { label: 'Contact', href: 'https://www.instagram.com/tinvail.art' },
 ];
 
 const legalLinks = [
   { label: 'Privacy', href: '/privacy' },
   { label: 'Terms', href: '/terms' },
-  { label: 'Refund policy', href: '/refund-policy' },
 ];
 
 const socialLinks = [
-  { label: 'Instagram', href: 'https://www.instagram.com/tinvail.art' },
+  {
+    label: 'Instagram',
+    href: 'https://www.instagram.com/tinvail.art',
+    ariaLabel: 'Follow Tinvail on Instagram',
+  },
 ];
 ---
 
 <Layout
   title="Tinvail | Modern travel-inspired art prints"
-  description="Shop modern travel-inspired art prints. Museum-grade quality, curated scenes, and fast worldwide shipping."
+  description="Shop modern travel-inspired art prints. Multiple sizes, premium paper finishes, and fast worldwide shipping."
 >
   <SiteHeader logoUrl={logoUrl} navLinks={navLinks} ctaLinks={headerCtas} />
 
@@ -221,14 +190,7 @@ const socialLinks = [
       title="Bestsellers"
       description="Shop the most loved prints, ready to frame and style."
       products={bestsellers}
-      cta={{ label: 'View all bestsellers', href: '#collections' }}
-    />
-
-    <CollectionGrid
-      id="collections"
-      title="Choose your vibe"
-      description="Explore curated collections by mood and destination."
-      collections={collections}
+      cta={{ label: 'View all bestsellers', href: 'https://shop.tinvail.art' }}
     />
 
     <FeatureList
@@ -237,15 +199,14 @@ const socialLinks = [
       features={features}
     />
 
+    <AboutSection id="about" {...aboutContent} />
+
     <FaqTeaser
       id="faq"
-      title="Shipping, returns, and quality"
+      title="FAQ"
       description="Everything you need to know before you order."
       items={faqItems}
-      cta={{ label: 'Read full shipping details', href: '/shipping' }}
     />
-
-    <AboutSection id="about" {...aboutContent} />
   </main>
 
   <SiteFooter
