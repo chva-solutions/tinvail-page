@@ -33,6 +33,68 @@ body {
   background: var(--color-pearl);
 }
 
+.cookie-banner {
+  position: fixed;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  z-index: 50;
+  background: #fff;
+  border-radius: 22px;
+  border: 1px solid rgba(47, 42, 42, 0.12);
+  padding: 18px 20px;
+  box-shadow: 0 22px 50px rgba(47, 42, 42, 0.18);
+}
+
+.cookie-banner__content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cookie-banner__text strong {
+  display: inline-block;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.cookie-banner__text p {
+  margin: 0;
+  color: var(--color-ink-soft);
+}
+
+.cookie-banner__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.cookie-banner .btn-primary,
+.cookie-banner .btn-outline {
+  padding: 10px 22px;
+  font-size: 0.95rem;
+}
+
+@media (min-width: 768px) {
+  .cookie-banner {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    width: min(900px, calc(100% - 80px));
+    padding: 20px 26px;
+  }
+
+  .cookie-banner__content {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .cookie-banner__text {
+    max-width: 520px;
+  }
+}
+
 ::selection {
   background: var(--color-rose);
   color: #fff;

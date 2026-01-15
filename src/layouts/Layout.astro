@@ -36,6 +36,70 @@ const base = import.meta.env.BASE_URL;
 
       gtag('config', 'G-RWT96RB32C');
     </script>
+    <!-- Meta Pixel (loads after consent) -->
+    <script>
+      const metaPixelId = '2092223861616583';
+      const consentKey = 'tinvail-cookie-consent';
+
+      function loadMetaPixel() {
+        if (window.fbq) return;
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', metaPixelId);
+        fbq('track', 'PageView');
+      }
+
+      let consent = null;
+      try {
+        consent = localStorage.getItem(consentKey);
+      } catch (error) {
+        consent = null;
+      }
+
+      if (consent === 'accepted') {
+        loadMetaPixel();
+      }
+
+      window.addEventListener('load', () => {
+        const banner = document.getElementById('cookie-banner');
+        const acceptButton = document.getElementById('cookie-accept');
+        const declineButton = document.getElementById('cookie-decline');
+
+        if (!banner || !acceptButton || !declineButton) return;
+
+        if (consent === 'accepted' || consent === 'declined') {
+          banner.hidden = true;
+          return;
+        }
+
+        banner.hidden = false;
+
+        acceptButton.addEventListener('click', () => {
+          try {
+            localStorage.setItem(consentKey, 'accepted');
+          } catch (error) {
+            // If storage fails, still load for this session.
+          }
+          banner.hidden = true;
+          loadMetaPixel();
+        });
+
+        declineButton.addEventListener('click', () => {
+          try {
+            localStorage.setItem(consentKey, 'declined');
+          } catch (error) {
+            // Ignore storage issues; banner will return next visit.
+          }
+          banner.hidden = true;
+        });
+      });
+    </script>
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
 
@@ -50,5 +114,17 @@ const base = import.meta.env.BASE_URL;
   </head>
   <body class="font-sans antialiased bg-pearl text-ink">
     <slot />
+    <div id="cookie-banner" class="cookie-banner" hidden>
+      <div class="cookie-banner__content">
+        <div class="cookie-banner__text">
+          <strong>Cookie consent</strong>
+          <p>We use marketing cookies to understand how visitors engage with Tinvail. Accept to help us improve.</p>
+        </div>
+        <div class="cookie-banner__actions">
+          <button id="cookie-decline" class="btn-outline" type="button">Decline</button>
+          <button id="cookie-accept" class="btn-primary" type="button">Accept</button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
