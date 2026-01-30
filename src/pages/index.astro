@@ -13,7 +13,7 @@ const imageUrl = (filename) => `${base}images/${filename}`;
 const logoUrl = `${base}logo.png`;
 
 const navLinks = [
-  { label: 'Shop', href: '#bestsellers' },
+  { label: 'Shop', href: 'https://shop.tinvail.art' },
   { label: 'Bestsellers', href: '#bestsellers' },
   { label: 'About', href: '#about' },
   { label: 'FAQ', href: '#faq' },
@@ -25,8 +25,8 @@ const headerCtas = [
 ];
 
 const heroContent = {
-  headline: 'Modern travel-inspired art prints for your space.',
-  subline: 'Multiple sizes and paper finishes in curated scenes, shipped worldwide.',
+  headline: 'Modern art prints and gallery wall prints for your space.',
+  subline: 'Calming wall art for home office settings, with landscape wall art prints, multiple sizes, and premium paper finishes shipped worldwide.',
   note: 'From $14.99 USD. Pricing varies by size and paper.',
   image: {
     src: imageUrl('sunbreak-shore.jpeg'),
@@ -147,15 +147,18 @@ const faqItems = [
 const aboutContent = {
   title: 'A curated print studio for calm, intentional spaces.',
   paragraphs: [
-    'Tinvail is a curated art print studio inspired by travel and atmosphere.',
-    'Designed to make spaces feel intentional, calm, and lived-in.',
-    'Every print is selected to bring clarity and warmth to the room.',
+    'Tinvail is a curated art print studio inspired by travel nostalgia and travel wall art scenes.',
+    'Designed to make spaces feel intentional, calm, and lived-in with an office wall art aesthetic.',
+    'Every print is selected as wall decor, including wall art for workspace corners that need clarity and warmth, especially during work-from-home fatigue.',
+    'For anyone doing “mental escape” searches, explore nature wall art, coastal wall art, and beach wall art prints.',
+    'Find peaceful wall art and relaxing wall art—wall art for stress relief and wall art for mindfulness—crafted as art for calm home settings.',
+    'Collect art prints for living room moments and wall art for bedroom calm.',
   ],
   link: { label: 'Read the story', href: '/story' },
 };
 
 const footerLinks = [
-  { label: 'Shop', href: '#bestsellers' },
+  { label: 'Shop', href: 'https://shop.tinvail.art' },
   { label: 'Bestsellers', href: '#bestsellers' },
   { label: 'About', href: '#about' },
   { label: 'FAQ', href: '#faq' },
@@ -178,7 +181,7 @@ const socialLinks = [
 
 <Layout
   title="Tinvail | Modern travel-inspired art prints"
-  description="Shop modern travel-inspired art prints. Multiple sizes, premium paper finishes, and fast worldwide shipping."
+  description="Shop modern wall art prints, travel wall art, and landscape wall art prints. Calming, nature-leaning art prints and wall decor with multiple sizes, premium paper finishes, and fast worldwide shipping."
 >
   <SiteHeader logoUrl={logoUrl} navLinks={navLinks} ctaLinks={headerCtas} />
 
@@ -188,7 +191,7 @@ const socialLinks = [
     <ProductGrid
       id="bestsellers"
       title="Bestsellers"
-      description="Shop the most loved prints, ready to frame and style."
+      description="Shop the most loved prints, from coastal wall decor to beach wall art prints, ready to frame and style."
       products={bestsellers}
       cta={{ label: 'View all bestsellers', href: 'https://shop.tinvail.art' }}
     />
